@@ -8,11 +8,21 @@
     tools:context=".application_status">
 
 
-    <ImageView
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:background="@drawable/add_application"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/add_application" />
+        android:layout_alignParentBottom="true"
+        />
+
 
 </RelativeLayout>
