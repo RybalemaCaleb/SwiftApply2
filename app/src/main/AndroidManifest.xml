@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".application_status"></activity>
+        <activity android:name=".application_status" />
+        <activity android:name=".SelectPreferedSchool"></activity>
     </application>
 
 </manifest>

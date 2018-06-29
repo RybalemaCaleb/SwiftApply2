@@ -6,17 +6,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".application_status">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3c5563"
+        android:elevation="5dp"
+        >
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Application Status"
+                android:textColor="#FFF"
+                android:textSize="28sp"
+
+                />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
 
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/statusifo"
+        android:layout_below="@+id/toolbarS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+
+        tools:ignore="UnknownId">
 
     </android.support.v7.widget.RecyclerView>
 
+    <TextView
+        android:id="@+id/msg"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="159dp"
+        android:text="No Applications Made!!"
+        android:textSize="20sp" />
+
     <Button
+        android:id="@+id/add_application"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/add_application"

@@ -59,6 +59,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.StatusView
             name= (TextView) itemView.findViewById(R.id.name);
 
 
+
         }
     }
 
