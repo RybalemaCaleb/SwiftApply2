@@ -6,6 +6,7 @@
     android:elevation="5dp">
 
     <RelativeLayout
+        android:id="@+id/schoolid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp">
@@ -18,7 +19,7 @@
             android:text="School Name"
             android:textSize="18sp"/>
         <ImageView
-            android:id="@+id/school_budge"
+            android:id="@+id/school_badge"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
 

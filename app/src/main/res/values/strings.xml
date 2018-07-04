@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SwiftApply</string>
     <string name="myname">This is what i want to tell you</string>
+    <string name="titlebar">Select Prefered School</string>
 </resources>
