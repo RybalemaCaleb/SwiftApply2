@@ -1,6 +1,23 @@
 package com.example.rcaleb.swiftapply;
 
+import android.content.Context;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class SchoolHolder {
+    private Context context;
     private String school;
     private String description;
     private String sever_url;
@@ -9,6 +26,18 @@ public class SchoolHolder {
     private String badge;
     private String website;
     private String phone_number;
+    String severUrl="";
+
+    public SchoolHolder(Context context) {
+        this.context = context;
+    }
+
+
+    List<SchoolHolder> dataList;
+
+    {
+        dataList = new ArrayList<>();
+    }
 
     public String getSchool() {
         return school;
@@ -73,4 +102,63 @@ public class SchoolHolder {
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
+
+    public List<SchoolHolder> getSchoolinfoList(){
+
+        JsonArrayRequest schools = new JsonArrayRequest(Request.Method.POST, severUrl, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                int i=0;
+
+                while(i<response.length()) {
+
+                    try {
+                        JSONObject JsonSchool = response.getJSONObject(i);
+                        SchoolHolder schoolHolder = new SchoolHolder(context);
+
+                        schoolHolder.setSchool(JsonSchool.getString("school"));
+
+                        schoolHolder.setBadge(JsonSchool.getString("badge"));
+
+                        schoolHolder.setBanner_url(JsonSchool.getString("banner"));
+
+                        schoolHolder.setDescription(JsonSchool.getString("description"));
+
+                        schoolHolder.setLocation(JsonSchool.getString("location"));
+
+                        schoolHolder.setPhone_number(JsonSchool.getString("phone_number"));
+
+                        schoolHolder.setWebsite(JsonSchool.getString("website"));
+
+                        schoolHolder.setSever_url(JsonSchool.getString("badge"));
+                            dataList.add(schoolHolder);
+
+                        i++;
+
+                    }catch (JSONException e){
+                        e.printStackTrace();
+                    }
+
+
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(context.getApplicationContext(),"Error Occurred!!!",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        MySingletonPartern.getInstance(context).addRequestQueue(schools);
+
+
+        return dataList;
+    }
+
+
+
+
 }
