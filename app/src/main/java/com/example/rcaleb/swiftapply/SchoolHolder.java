@@ -7,14 +7,14 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.util.LogTime;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class SchoolHolder {
     private Context context;
@@ -26,14 +26,14 @@ public class SchoolHolder {
     private String badge;
     private String website;
     private String phone_number;
-    String severUrl="";
+    String severUrl="http://10.103.5.126/data/swiftApply/pickschools.php";
 
     public SchoolHolder(Context context) {
         this.context = context;
     }
 
 
-    List<SchoolHolder> dataList;
+    ArrayList<SchoolHolder> dataList;
 
     {
         dataList = new ArrayList<>();
@@ -103,12 +103,11 @@ public class SchoolHolder {
         this.phone_number = phone_number;
     }
 
-    public List<SchoolHolder> getSchoolinfoList(){
+    public ArrayList<SchoolHolder> getSchoolinfoList(){
 
-        JsonArrayRequest schools = new JsonArrayRequest(Request.Method.POST, severUrl, null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest schools = new JsonArrayRequest(severUrl, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-
                 int i=0;
 
                 while(i<response.length()) {
@@ -135,9 +134,11 @@ public class SchoolHolder {
                             dataList.add(schoolHolder);
 
                         i++;
-
+                        Toast.makeText(context.getApplicationContext(),""+dataList.size(),Toast.LENGTH_SHORT).show();
                     }catch (JSONException e){
+                        Toast.makeText(context.getApplicationContext(),"Error Occurred in Object!!!",Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
+
                     }
 
 
@@ -148,6 +149,7 @@ public class SchoolHolder {
             public void onErrorResponse(VolleyError error) {
 
                 Toast.makeText(context.getApplicationContext(),"Error Occurred!!!",Toast.LENGTH_SHORT).show();
+                error.printStackTrace();
 
             }
         });

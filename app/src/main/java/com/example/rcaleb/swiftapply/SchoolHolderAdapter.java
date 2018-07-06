@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -20,12 +21,14 @@ public class SchoolHolderAdapter extends RecyclerView.Adapter<SchoolHolderAdapte
 
     Context context;
     LayoutInflater inflater;
-    List<SchoolHolder> dataList;
+    ArrayList<SchoolHolder> dataList;
 
-    public SchoolHolderAdapter(Context context){
+    public SchoolHolderAdapter(Context context, ArrayList<SchoolHolder> dataList){
         this.context = context;
         inflater = LayoutInflater.from(context);
-        dataList = new ArrayList<>();
+        this.dataList=dataList;
+
+
     }
     public SchoolViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
@@ -36,17 +39,21 @@ public class SchoolHolderAdapter extends RecyclerView.Adapter<SchoolHolderAdapte
 
 
     public void onBindViewHolder(@NonNull SchoolViewHolder holder, int position) {
+        Toast.makeText(context.getApplicationContext(),""+position,Toast.LENGTH_SHORT).show();
 
         holder.name.setText(dataList.get(position).getSchool());
         Glide.with(context)
                 .load(dataList.get(position).getBadge())
                 .into(holder.badge);
+        Toast.makeText(context.getApplicationContext(),""+position,Toast.LENGTH_SHORT).show();
 
     }
 
 
     public int getItemCount() {
-        return 0;
+
+
+        return dataList.size();
     }
 
     public class SchoolViewHolder extends RecyclerView.ViewHolder{
@@ -55,7 +62,7 @@ public class SchoolHolderAdapter extends RecyclerView.Adapter<SchoolHolderAdapte
         RelativeLayout school;
         public SchoolViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.name);
+            name = (TextView) itemView.findViewById(R.id.school_name);
             badge = (ImageView) itemView.findViewById(R.id.school_badge);
             school = (RelativeLayout) itemView.findViewById(R.id.schoolid);
         }
