@@ -1,22 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SchoolInfomation">
+    tools:context=".SchoolInfomation"
+    tools:layout_editor_absoluteY="25dp">
 
     <ImageView
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@color/colorPrimaryDark" />
+
     <ImageView
         android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="265dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="359dp"
+        android:layout_height="227dp"
+        android:src="@drawable/logo"
 
         />
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/rela"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/banner"
+        android:background="#3c5563"
+        >
+        <TextView
+
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/school_NAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="School NAme here"
+            android:textColor="#FFFF"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_below="@+id/school_NAME"
+            android:id="@+id/school_Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="#FFFF"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:id="@+id/school_badge"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher"/>
+
+    </RelativeLayout>
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/rela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:elevation="5dp">
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:text="been a growing recognition that data is an important corporate resource that should be
+treated with respect, like all other organizational resources. This resulted in many organ-
+izations establishing whole departments or functional areas called Data Administration
+
+"/>
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#636ad2f1"
+        android:elevation="10dp">
+
+       <ImageView
+           android:id="@+id/call_now"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/call_logo"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="22dp"/>
+
+        <ImageView
+            android:id="@+id/visit_site"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/visit_website_logo"
+            android:layout_centerInParent="true"
+             />
+        <ImageView
+            android:id="@+id/apply_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/apply_now"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

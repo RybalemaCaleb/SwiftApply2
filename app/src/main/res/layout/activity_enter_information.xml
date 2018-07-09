@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/titlebar"
                 android:textColor="#FFF"
-                android:textSize="28sp"
+                android:textSize="25sp"
 
                 />
         </LinearLayout>

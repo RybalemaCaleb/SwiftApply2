@@ -31,6 +31,7 @@ public class MySingletonPartern  {
     }
 
     public<T> void addRequestQueue(Request<T> request){
+
         requestQueue.add(request);
     }
 }

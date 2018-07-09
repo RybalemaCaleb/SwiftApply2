@@ -14,69 +14,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+public  class SchoolHolder{
 
+    private String badge,school,location,banner,phone_number,website,server_url,description;
 
-public class SchoolHolder {
-    private Context context;
-    private String school;
-    private String description;
-    private String sever_url;
-    private String banner_url;
-    private String location;
-    private String badge;
-    private String website;
-    private String phone_number;
-    String severUrl="http://10.103.5.126/data/swiftApply/pickschools.php";
-
-    public SchoolHolder(Context context) {
-        this.context = context;
-    }
-
-
-    ArrayList<SchoolHolder> dataList;
-
-    {
-        dataList = new ArrayList<>();
-    }
-
-    public String getSchool() {
-        return school;
-    }
-
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getSever_url() {
-        return sever_url;
-    }
-
-    public void setSever_url(String sever_url) {
-        this.sever_url = sever_url;
-    }
-
-    public String getBanner_url() {
-        return banner_url;
-    }
-
-    public void setBanner_url(String banner_url) {
-        this.banner_url = banner_url;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public SchoolHolder(String badge, String school, String location, String banner, String phone_number, String website, String server_url, String description) {
+        this.setBadge(badge);
+        this.setSchool(school);
+        this.setLocation(location);
+        this.setBanner(banner);
+        this.setPhone_number(phone_number);
+        this.setWebsite(website);
+        this.setServer_url(server_url);
+        this.setDescription (description);
     }
 
     public String getBadge() {
@@ -87,12 +37,28 @@ public class SchoolHolder {
         this.badge = badge;
     }
 
-    public String getWebsite() {
-        return website;
+    public String getSchool() {
+        return school;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getBanner() {
+        return banner;
+    }
+
+    public void setBanner(String banner) {
+        this.banner = banner;
     }
 
     public String getPhone_number() {
@@ -103,64 +69,27 @@ public class SchoolHolder {
         this.phone_number = phone_number;
     }
 
-    public ArrayList<SchoolHolder> getSchoolinfoList(){
-
-        JsonArrayRequest schools = new JsonArrayRequest(severUrl, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                int i=0;
-
-                while(i<response.length()) {
-
-                    try {
-                        JSONObject JsonSchool = response.getJSONObject(i);
-                        SchoolHolder schoolHolder = new SchoolHolder(context);
-
-                        schoolHolder.setSchool(JsonSchool.getString("school"));
-
-                        schoolHolder.setBadge(JsonSchool.getString("badge"));
-
-                        schoolHolder.setBanner_url(JsonSchool.getString("banner"));
-
-                        schoolHolder.setDescription(JsonSchool.getString("description"));
-
-                        schoolHolder.setLocation(JsonSchool.getString("location"));
-
-                        schoolHolder.setPhone_number(JsonSchool.getString("phone_number"));
-
-                        schoolHolder.setWebsite(JsonSchool.getString("website"));
-
-                        schoolHolder.setSever_url(JsonSchool.getString("badge"));
-                            dataList.add(schoolHolder);
-
-                        i++;
-                        Toast.makeText(context.getApplicationContext(),""+dataList.size(),Toast.LENGTH_SHORT).show();
-                    }catch (JSONException e){
-                        Toast.makeText(context.getApplicationContext(),"Error Occurred in Object!!!",Toast.LENGTH_SHORT).show();
-                        e.printStackTrace();
-
-                    }
-
-
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Toast.makeText(context.getApplicationContext(),"Error Occurred!!!",Toast.LENGTH_SHORT).show();
-                error.printStackTrace();
-
-            }
-        });
-
-        MySingletonPartern.getInstance(context).addRequestQueue(schools);
-
-
-        return dataList;
+    public String getWebsite() {
+        return website;
     }
 
+    public void setWebsite(String website) {
+        this.website = website;
+    }
 
+    public String getServer_url() {
+        return server_url;
+    }
 
+    public void setServer_url(String server_url) {
+        this.server_url = server_url;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
