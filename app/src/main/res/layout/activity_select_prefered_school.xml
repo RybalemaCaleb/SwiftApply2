@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:src="@drawable/white_back_button"/>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,9 +28,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/titlebar"
                 android:textColor="#FFF"
-                android:textSize="28sp"
+                android:textSize="28sp"/>
 
-                />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 

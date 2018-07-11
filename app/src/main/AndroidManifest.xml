@@ -23,7 +23,9 @@
         <activity android:name=".SelectPreferedSchool" />
         <activity android:name=".EnterInformation" />
         <activity android:name=".SchoolInfomation" />
-        <activity android:name=".FetchInformation"></activity>
+        <activity android:name=".FetchInformation" />
+        <activity android:name=".ApplicationScreen1" />
+        <activity android:name=".ApplicationScreen2"></activity>
     </application>
 
 </manifest>

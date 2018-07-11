@@ -96,6 +96,17 @@ public class SchoolInfomation extends AppCompatActivity {
                     Toast.makeText(SchoolInfomation.this,"Sorry You Phone doesnot Support this Service, But you can continue with your Application process",Toast.LENGTH_LONG).show();
             }
         });
+
+
+        Continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent apply = new Intent(SchoolInfomation.this,FetchInformation.class);
+                startActivity(apply);
+            }
+        });
+
     }
 
 
