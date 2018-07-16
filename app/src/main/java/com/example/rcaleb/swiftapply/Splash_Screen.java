@@ -20,7 +20,7 @@ public class Splash_Screen extends AppCompatActivity {
 
                     e.printStackTrace();
                 }finally {
-                    Intent next = new Intent(getApplicationContext(),application_status.class);
+                    Intent next = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(next);
                     finish();
                 }

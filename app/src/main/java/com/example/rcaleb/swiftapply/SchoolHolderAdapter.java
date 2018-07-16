@@ -45,9 +45,11 @@ public class SchoolHolderAdapter extends RecyclerView.Adapter<SchoolHolderAdapte
 
 
     public void onBindViewHolder(@NonNull final SchoolViewHolder holder, final int position) {
-        Toast.makeText(context.getApplicationContext(),""+position,Toast.LENGTH_SHORT).show();
+
 
         holder.name.setText(dataList.get(position).getSchool());
+
+
         Glide.with(context)
                 .asBitmap()
                 .load(dataList.get(position).getBadge())

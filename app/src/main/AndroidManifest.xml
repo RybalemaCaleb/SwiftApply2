@@ -25,7 +25,15 @@
         <activity android:name=".SchoolInfomation" />
         <activity android:name=".FetchInformation" />
         <activity android:name=".ApplicationScreen1" />
-        <activity android:name=".ApplicationScreen2"></activity>
+        <activity android:name=".ApplicationScreen2" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>

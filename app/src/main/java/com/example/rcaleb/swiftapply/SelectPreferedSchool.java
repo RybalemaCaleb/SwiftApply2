@@ -28,7 +28,7 @@ public class SelectPreferedSchool extends AppCompatActivity {
     RecyclerView schoolItem;
     ImageView back;
     ArrayList<SchoolHolder> SchoolList = new ArrayList<>();
-    String Url ="http://10.103.10.141/data/swiftApply/pickschools.php";
+    String Url ="http://192.168.43.253/data/swiftApply/pickschools.php";
 
 
 
@@ -109,53 +109,3 @@ public class SelectPreferedSchool extends AppCompatActivity {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

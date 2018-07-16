@@ -115,6 +115,7 @@ public class SchoolInfomation extends AppCompatActivity {
 
 
         if (ActivityCompat.checkSelfPermission(SchoolInfomation.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
             ActivityCompat.requestPermissions(SchoolInfomation.this, new String[]{
                     Manifest.permission.CALL_PHONE},REQUEST_CALL);
         }

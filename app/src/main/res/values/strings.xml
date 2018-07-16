@@ -2,4 +2,14 @@
     <string name="app_name">SwiftApply</string>
     <string name="myname">This is what i want to tell you</string>
     <string name="titlebar">Select Prefered School</string>
+    <array name="listOptions">
+        <item>
+            Take a Photo
+        </item>
+
+        <item>
+            Select from Gallery
+        </item>
+
+    </array>
 </resources>
