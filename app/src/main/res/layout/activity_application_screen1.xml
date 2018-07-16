@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApplicationScreen1"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="283dp">
+
+        <ImageView
+            android:id="@+id/passport_photo"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:src="@drawable/user" />
+
+        <ImageView
+            android:id="@+id/take_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/edit_button" />
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="10dp"
+        android:id="@+id/card"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="55dp"
+            android:paddingTop="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAME"
+                android:id="@+id/name_label"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_marginTop="9dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/applicants_name"
+                android:text="NAme goes here"
+                android:layout_below="@+id/name_label"
+
+                />
+            
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sex_label"
+                android:layout_below="@+id/applicants_name"
+                android:text="SEX"/>
+
+            <TextView
+                android:layout_marginTop="9dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gender"
+                android:layout_below="@+id/sex_label"
+                android:text="gender goes here"/>
+
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dob_label"
+                android:layout_below="@+id/gender"
+                android:text="Date of Birth"/>
+
+            <TextView
+                android:layout_marginTop="9dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/applicants_dob"
+                android:text="dob goes here"
+                android:layout_below="@+id/dob_label"/>
+
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/foward"
+        android:background="@drawable/ic_send_black_24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="300dp"/>
+
+
+</LinearLayout>

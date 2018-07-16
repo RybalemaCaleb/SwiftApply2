@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FetchInformation"
+    android:orientation="vertical">
+    
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbAR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3c5563"
+        android:elevation="5dp">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/white_back_button"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fetch Information"
+                android:textColor="#FFF"
+                android:textSize="27sp"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/enter_school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search"
+        android:layout_centerInParent="true"
+        android:hint="Select Previous School"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/drop_down"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"/>
+    <EditText
+        android:layout_below="@+id/enter_school"
+        android:id="@+id/enter_nin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search"
+        android:layout_centerInParent="true"
+        android:hint="Enter National Identification Number"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        />
+<Button
+    android:id="@+id/fetch"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/enter_nin"
+    android:background="@drawable/fetch_button"
+    android:layout_marginTop="45dp"
+    android:layout_centerHorizontal="true"/>
+
+
+
+
+</RelativeLayout>
