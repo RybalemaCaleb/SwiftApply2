@@ -60,7 +60,9 @@
                 android:id="@+id/NIN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true">
+                app:errorEnabled="true"
+                app:counterMaxLength="14"
+                app:counterEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
@@ -75,6 +77,7 @@
                 android:id="@+id/password1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
                 app:errorEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
@@ -90,6 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
                 >
 
                 <android.support.design.widget.TextInputEditText
@@ -116,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FFF"
-                android:text="Sign IN"/>
+                android:text="BAck to  Sign IN"/>
 
 
 

@@ -30,7 +30,7 @@ public class MySingletonPartern  {
         return requestQueue;
     }
 
-    public<T> void addRequestQueue(Request<T> request){
+    public<T> void addToRequestQueue(Request<T> request){
 
         requestQueue.add(request);
     }

@@ -7,15 +7,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -92,7 +89,7 @@ public class SelectPreferedSchool extends AppCompatActivity {
             }
         });
 
-        MySingletonPartern.getInstance(this).addRequestQueue(schoolListRequest);
+        MySingletonPartern.getInstance(this).addToRequestQueue(schoolListRequest);
 
 
     }
